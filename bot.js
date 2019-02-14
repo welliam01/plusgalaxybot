@@ -27,7 +27,7 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const sql = require("sqlite");
 const dateFormat = require('dateformat'); 
 const pretty = require('pretty-ms') 
-const prefix = 'G.';
+const prefix = '+';
 var table = require('table').table
 var ti={}  
 ,spee={}
@@ -60,107 +60,104 @@ client.on('ready', function(){
 client.on('message', message => {
 if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
     let pages = [`
-***__وصف عن البوت__***
-**
-:gem:  البوت فيه كثير ميزات حلوة و جميلة
- ا:rocket: البوت يعمل 24 ساعه 
+***___Welcome To Plus Bot___***
 
 **
         ***__General orders__***
 **
-『${prefix}allbots/لعرض جميع البوتات الي بالسيرفر』
-『${prefix}server/يعرض لك معلومات عن السيرفر』
-『${prefix}bot/يعرض لك كل معلومات البوت』
-『${prefix}count/يعرض لك عدد الاشخاص بالسيرفر بدون بوتات』
-『${prefix}invites/ يعرض لك  عدد انفايتاتك بالسيرفر 』
-『${prefix}invinfo <invitelink here> / لمعلومات عن الدعوه』
-『 مثال : invinfo m82n8P
-『${prefix}invite-codes/يعرض لك روابط الانفايتات حكك في السيرفر 』
-『${prefix}cal/اله حاسبة』 
-『${prefix}trans <language> <any thing>/يترجم لك الي تبيه من اي لغة』
-『${prefix}short/يختصر لك رابط كبير الى رابط صغير』
-『${prefix}tag/يكتب لك الكلمة بشكل جميل وكبير』
-『${prefix}google/للبحث في قوقل عن طريق الدسكورد』
-『${prefix}perms/يعرض لك برمشناتك بالسيرفر』
-『${prefix}z5rf/يزخرف لك كلمة او جملة』
-『${prefix}rooms/يعرض لك كل الرومات الي بالسيرفر مع عددها』
-『${prefix}roles/يعرض لك كل الرانكات بالسيرفر بشكل جميل』
-『${prefix}emojilist/يعرض لك كل الايموجيات الي بالسيرفر』
-『${prefix}say/يكرر الكلام الي تكتبو』
-『${prefix}image/صورة السيرفر』
-『${prefix}members/عرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص』
-『${prefix}id/معلومات عنك』
-『${prefix}bans / عدد الاشخاص المبندة 』
-『${prefix}avatar/صورتك او صورة الي تمنشنو』
-『${prefix}embed/يكرر الي تقولو بشكل حلو』 
-『${prefix}emoji <any things>/لتحويل اي كلمه تقولها الي ايموجي』
-『${prefix}inv/لدعوة البوت الى سيرفرك』
-『${prefix}support/سيرفر الدعم』
-『${prefix}contact/ارسال اقتراح او لمراسلة صاحب البوت』
+⚙ ${prefix}allbots/لعرض جميع البوتات الي بالسيرفر
+⚙ ${prefix}server/يعرض لك معلومات عن السيرفر
+⚙ ${prefix}bot/يعرض لك كل معلومات البوت』
+⚙ ${prefix}count/يعرض لك عدد الاشخاص بالسيرفر بدون بوتات
+⚙ ${prefix}invites/ يعرض لك  عدد انفايتاتك بالسيرفر 
+⚙ ${prefix}invinfo <invitelink here> / لمعلومات عن الدعوه
+⚙ مثال : invinfo m82n8
+⚙ ${prefix}invite-codes/يعرض لك روابط الانفايتات حكك في السيرفر 
+⚙ ${prefix}cal/اله حاسبة』
+⚙ ${prefix}trans <language> <any thing>/يترجم لك الي تبيه من اي لغة
+⚙ ${prefix}short/يختصر لك رابط كبير الى رابط صغير
+⚙ ${prefix}tag/يكتب لك الكلمة بشكل جميل وكبير
+⚙ ${prefix}google/للبحث في قوقل عن طريق الدسكورد
+⚙ ${prefix}perms/يعرض لك برمشناتك بالسيرفر
+⚙ ${prefix}z5rf/يزخرف لك كلمة او جملة
+⚙ ${prefix}rooms/يعرض لك كل الرومات الي بالسيرفر مع عددها
+⚙ ${prefix}roles/يعرض لك كل الرانكات بالسيرفر بشكل جميل
+⚙ ${prefix}emojilist/يعرض لك كل الايموجيات الي بالسيرفر
+⚙ ${prefix}say/يكرر الكلام الي تكتبو
+⚙ ${prefix}image/صورة السيرفر
+⚙ ${prefix}members/عرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص
+⚙ ${prefix}id/معلومات عنك
+⚙ ${prefix}bans / عدد الاشخاص المبندة 
+⚙ ${prefix}avatar/صورتك او صورة الي تمنشنو
+⚙ ${prefix}embed/يكرر الي تقولو بشكل حلو
+⚙ ${prefix}emoji <any things>/لتحويل اي كلمه تقولها الي ايموجي
+⚙ ${prefix}inv/لدعوة البوت الى سيرفرك
+⚙ ${prefix}support/سيرفر الدعم
+⚙ ${prefix}contact/ارسال اقتراح او لمراسلة صاحب البوت
 **
   `
 ,`
         ***__Administrative Orders__***
 **
-『${prefix}move @user /  لسحب الشخص الى روومك』  
-『${prefix}bc / رسالة جماعية الى كل اعضاء السيرفر』
-『${prefix}bk / رسالة جماعيه مع』
-『${prefix}rolebc <everyone or @role> / راسال رساله جماعيه لرتبه محدده』
-『${prefix}role @user <rank> / لأعطاء رتبة لعضو معين』
-『${prefix}roleremove @user <rank> / لازالة الرتبة من شخص معين』
-『${prefix}give all <rank> / لأعطاء رتبة للجميع』
-『${prefix}give humans <rank> / لأعطاء رتبة للاشخاص فقط』
-『${prefix}give bots <rank> / لأعطاء رتبة لجميع البوتات』
-『${prefix}hchannel / اخفاء الشات』
-『${prefix}schannel / اضهار الشات المخفية』
-『${prefix}clr <numbr> / مسح الشات بعدد』
-『${prefix}clear / مسح الشات』
-『${prefix}mute @user <time> / اعطاء العضو ميوت 』
-『${prefix}unmute @user / لفك الميوت عن الشخص 』
-『${prefix}kick @user <reason> / طرد الشخص من السيرفر』
-『${prefix}ban @user <reason> / حضر الشخص من السيرفر』
-『${prefix}mutechannel / تقفيل الشات』
-『${prefix}unmutechannel / فتح الشات』
-『${prefix}dc / مسح كل الرومات』
-『${prefix}dr / <مسح كل الرانكات <لازم تكون رانك البوت فوق كل الرانكات』
-『${prefix}ct <name> / انشاء شات』
-『${prefix}cv <name> / انشاء رووم فويس』
-『${prefix}temp / لانشاء روم مؤقت』
-『${prefix}delet <name> / مسح الشات او الرووم فويس』
-『${prefix}make <number> / ينشا لك الوان مع كم الوان تبي』
-『${prefix}color <number> / لختيار لون』
-『${prefix}deletecolors <number> / لحذف الالوان』
+⚙ ${prefix}move @user /  لسحب الشخص الى روومك』 
+⚙ ${prefix}bc / رسالة جماعية الى كل اعضاء السيرفر
+⚙ ${prefix}bk / رسالة جماعيه مع
+⚙ ${prefix}rolebc <everyone or @role> / راسال رساله جماعيه لرتبه محدده
+⚙ ${prefix}role @user <rank> / لأعطاء رتبة لعضو معين
+⚙ ${prefix}roleremove @user <rank> / لازالة الرتبة من شخص معين
+⚙ ${prefix}give all <rank> / لأعطاء رتبة للجميع
+⚙ ${prefix}give humans <rank> / لأعطاء رتبة للاشخاص فقط
+⚙ ${prefix}give bots <rank> / لأعطاء رتبة لجميع البوتات
+⚙ ${prefix}hchannel / اخفاء الشات
+⚙ ${prefix}schannel / اضهار الشات المخفية
+⚙ ${prefix}clr <numbr> / مسح الشات بعدد
+⚙ ${prefix}clear / مسح الشات
+⚙ ${prefix}mute @user <time> / اعطاء العضو ميوت 
+⚙ ${prefix}unmute @user / لفك الميوت عن الشخص 
+⚙ ${prefix}kick @user <reason> / طرد الشخص من السيرفر
+⚙ ${prefix}ban @user <reason> / حضر الشخص من السيرفر
+⚙ ${prefix}mutechannel / تقفيل الشات
+⚙ ${prefix}unmutechannel / فتح الشات
+⚙ ${prefix}dc / مسح كل الرومات
+⚙ ${prefix}dr / <مسح كل الرانكات <لازم تكون رانك البوت فوق كل الرانكات
+⚙ ${prefix}ct <name> / انشاء شات
+⚙ ${prefix}cv <name> / انشاء رووم فويس
+⚙ ${prefix}temp / لانشاء روم مؤقت
+⚙ ${prefix}delet <name> / مسح الشات او الرووم فويس
+⚙ ${prefix}make <number> / ينشا لك الوان مع كم الوان تبي
+⚙ ${prefix}color <number> / لختيار لون
+⚙ ${prefix}deletecolors <number> / لحذف الالوان
 **
    `,`
         ***__Music orders__***
 **
-『${prefix}play / لتشغيل أغنية برآبط أو بأسم』
-『${prefix}skip / لتجآوز الأغنية الحآلية』
-『${prefix}pause / إيقآف الأغنية مؤقتا』
-『${prefix}resume / لموآصلة الإغنية بعد إيقآفهآ مؤقتا』
-『${prefix}vol / لتغيير درجة الصوت 100 - 0』
-『${prefix}stop / لإخرآج البوت من الروم』
-『${prefix}np / لمعرفة الأغنية المشغلة حآليا』
-『${prefix}queue / لمعرفة قآئمة التشغيل』
+⚙ ${prefix}play / لتشغيل أغنية برآبط أو بأسم
+⚙ ${prefix}skip / لتجآوز الأغنية الحآلية
+⚙ ${prefix}pause / إيقآف الأغنية مؤقتا
+⚙ ${prefix}resume / لموآصلة الإغنية بعد إيقآفهآ مؤقتا
+⚙ ${prefix}vol / لتغيير درجة الصوت 100 - 0
+⚙ ${prefix}stop / لإخرآج البوت من الروم
+⚙ ${prefix}np / لمعرفة الأغنية المشغلة حآليا
+⚙ ${prefix}queue / لمعرفة قآئمة التشغيل
 **
         ***__Games orders__***
  **       
-『${prefix}rps / حجر ورقة مقص』
-『${prefix}speed / اسرع كتابة』
-『${prefix}quas / اسئلة عامة』
-『${prefix}نكت / نكت 』
-『${prefix}لعبة فكك / فكك』
-『${prefix}عواصم عشوائي/عواصم』
-『${prefix}لعبة كت تويت / كت تويت』
-『${prefix}roll <number> / قرعة』
-『${prefix}لو خيروك بطريقة حلوة / لو خيروك』
-『${prefix}لعبة مريم / مريم』
-『${prefix}فوائد ونصائح  / هل تعلم』
-『${prefix}يعطيك عقابات قاسية / عقاب 』
+⚙ ${prefix}rps / حجر ورقة مقص
+⚙ ${prefix}speed / اسرع كتابة
+⚙ ${prefix}quas / اسئلة عامة
+⚙ ${prefix}نكت / نكت 
+⚙ ${prefix}لعبة فكك / فكك
+⚙ ${prefix}عواصم عشوائي/عواصم
+⚙ ${prefix}لعبة كت تويت / كت تويت
+⚙ ${prefix}roll <number> / قرعة
+⚙ ${prefix}لو خيروك بطريقة حلوة / لو خيروك
+⚙ ${prefix}لعبة مريم / مريم
+⚙ ${prefix}فوائد ونصائح  / هل تعلم
+⚙ ${prefix}يعطيك عقابات قاسية / عقاب 
 『=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.』
-『welcome يتم الترحيب فى روم باسم』
-『G.setwelcomer <text channel name> لاختيار روم للترحيب』
-『${prefix}voiceonline / لتفعيل روم الفويس اونلاين』
+⚙ welcome يتم الترحيب فى روم باسم
+⚙ +setwelcomer <text channel name> لاختيار روم للترحيب
+⚙ ${prefix}voiceonline / لتفعيل روم الفويس اونلاين
 **
    
 `]
@@ -357,7 +354,7 @@ client.on('message', function(msg) {
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO Galaxy Bot`` ')
+            .setTitle('``INFO Plus Bot`` ')
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
             .addField('``servers``', [client.guilds.size], true)
@@ -365,7 +362,7 @@ client.on('message', function(msg) {
             .addField('``Users``' ,`[ ${client.users.size} ]` , true)
             .addField('``My Name``' , `[ ${client.user.tag} ]` , true)
             .addField('``My ID``' , `[ ${client.user.id} ]` , true)
-			      .addField('``My Prefix``' , `[ G. ]` , true)
+			      .addField('``My Prefix``' , `[ + ]` , true)
 			      .addField('``My Language``' , `[ Java Script ]` , true)
 			      .setFooter('By | Baron')
     })
@@ -440,7 +437,7 @@ client.on('message', msg => {
 };
 });
 client.on('message', message => {
-    if (message.content.startsWith("G.trans")) {
+    if (message.content.startsWith("+trans")) {
       
     let toTrans = message.content.split(' ').slice(1);
     let language;
@@ -465,7 +462,7 @@ client.on('message', message => {
                 timestamp: new Date(),
                 footer: {
                   icon_url: client.user.avatarURL,
-                  text: "Galaxy"
+                  text: "Plusbot"
                 }
             }}
             )
@@ -546,7 +543,7 @@ if (command == "z5rf") {
 });
 
 client.on('message', message => {
-    if (message.content === "G.rooms") {
+    if (message.content === "+rooms") {
         if (message.author.bot) return
                       if (!message.guild) return;
 
@@ -710,13 +707,13 @@ message.channel.send({embed});
 }
 });
 client.on('message', message => {
-    if (message.content.startsWith("G.bans")) {
+    if (message.content.startsWith("+bans")) {
         message.guild.fetchBans()
         .then(bans => message.channel.send(`Number of banned persons **${bans.size}** `))
 }
 });
 client.on('message', message => {
-    if (message.content.startsWith("G.avatar")) {
+    if (message.content.startsWith("+avatar")) {
 if(!message.channel.guild) return;
         var mentionned = message.mentions.users.first();
     var client;
@@ -772,19 +769,19 @@ message.channel.send(
 client.on('message', message => {
                 if(message.content === prefix + "inv") {
                     let embed = new Discord.RichEmbed ()
-                    embed.setTitle("**:arrow_right: Invite Galaxy Bot!**")
-                    .setURL("https://discordapp.com/oauth2/authorize?client_id=435392018693488641&scope=bot&permissions=2146958591");
+                    embed.setTitle("**:arrow_right: Invite Plus Bot!**")
+                    .setURL("https://discordapp.com/api/oauth2/authorize?client_id=544651746220441600&permissions=8&scope=bot");
                    message.channel.sendEmbed(embed);
                   }
 });
 
 
    client.on('message', message => {
-     if (message.content === "G.support") {
+     if (message.content === "+support") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
-  .addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/qEPMJgb**")
+  .addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/mJGznNR**")
      
      
   message.channel.sendEmbed(embed);
@@ -800,7 +797,7 @@ if (!message.channel.guild) return;
 let args = message.content.split(" ").slice(1).join(" ");
 
 
-client.users.get("434845976050794516").send(
+client.users.get("536509623734370304").send(
     "\n" + "**" + "● السيرفر :" + "**" +
     "\n" + "**" + "» " + message.guild.name + "**" +
     "\n" + "**" + " ● المرسل : " + "**" +
@@ -853,7 +850,7 @@ message.react("❌")
  }}});
  client.on('message', message => {
   if(!message.channel.guild) return;
-if(message.content.startsWith('G.bc')) {
+if(message.content.startsWith('+bc')) {
 if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
 if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
